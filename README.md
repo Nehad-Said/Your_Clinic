@@ -15,8 +15,9 @@ Database: SQLite - A C-language library that provides a relational database mana
 Frontend: HTML5, CSS3 (Bootstrap), JavaScript.
 Authentication: Flask-Login - User session management for Flask.
 ORM: SQLAlchemy - Python SQL toolkit and Object-Relational Mapping (ORM) library.
+## Project Structure
 
-Project Structure
+```plaintext
 dentistry_app/
 ├── app.py                    # Main application file
 ├── models.py                 # Database models
@@ -46,6 +47,7 @@ Installation
 Clone the repository:
 
 git clone https://github.com/yourusername/Your_Clinic.git
+
 cd Your_Clinic
 
 Create a virtual environment and activate it:
