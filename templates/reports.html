@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Reports{% endblock %}
+
+{% block content %}
+    <h1>Reports</h1>
+    <h2>Patients</h2>
+    <ul class="list-group">
+        {% for patient in patients %}
+            <li class="list-group-item">{{ patient.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Treatments</h2>
+    <ul class="list-group">
+        {% for treatment in treatments %}
+            <li class="list-group-item">{{ treatment.description }} - {{ treatment.treatment_date }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+

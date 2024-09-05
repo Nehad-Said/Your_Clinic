@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h1>Dashboard</h1>
+    <h2>Patients</h2>
+    <ul class="list-group">
+        {% for patient in patients %}
+            <li class="list-group-item">
+                <a href="{{ url_for('patient_profile', patient_id=patient.id) }}">{{ patient.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>Appointments</h2>
+    <ul class="list-group">
+        {% for appointment in appointments %}
+            <li class="list-group-item">
+                Appointment with {{ appointment.patient.name }} on {{ appointment.appointment_time }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+

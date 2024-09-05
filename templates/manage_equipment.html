@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Manage Equipment{% endblock %}
+
+{% block content %}
+    <h1>Manage Equipment</h1>
+    <ul class="list-group">
+        {% for item in equipment %}
+            <li class="list-group-item">
+                {{ item.name }} - {{ item.stock_quantity }} in stock
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+

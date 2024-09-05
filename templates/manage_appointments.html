@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Manage Appointments{% endblock %}
+
+{% block content %}
+    <h1>Manage Appointments</h1>
+    <ul class="list-group">
+        {% for appointment in appointments %}
+            <li class="list-group-item">
+                Appointment with {{ appointment.patient.name }} on {{ appointment.appointment_time }} - Status: {{ appointment.status }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+

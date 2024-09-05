@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Notifications{% endblock %}
+
+{% block content %}
+    <h1>Notifications</h1>
+
+    {% if notifications %}
+        <ul class="list-group">
+            {% for notification in notifications %}
+                <li class="list-group-item">
+                    <strong>{{ notification.title }}</strong>
+                    <p>{{ notification.message }}</p>
+                    <small class="text-muted">{{ notification.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</small>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No new notifications at this time.</p>
+    {% endif %}
+    
+{% endblock %}
+

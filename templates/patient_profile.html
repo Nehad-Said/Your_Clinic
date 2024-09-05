@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Patient Profile{% endblock %}
+
+{% block content %}
+    <h1>{{ patient.name }}</h1>
+    <p>Email: {{ patient.email }}</p>
+    <p>Phone: {{ patient.phone }}</p>
+    <p>Medical History: {{ patient.medical_history }}</p>
+
+    <h2>Treatments</h2>
+    <ul class="list-group">
+        {% for treatment in treatments %}
+            <li class="list-group-item">{{ treatment.description }} ({{ treatment.treatment_date }})</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Add Treatment</h3>
+    <form method="POST" action="{{ url_for('patient_profile', patient_id=patient.id) }}">
+        {{ treatment_form.hidden_tag() }}
+        <div class="form-group">
+            {{ treatment_form.description.label(class="form-label") }}
+            {{ treatment_form.description(class="form-control") }}
+        </div>
+        <button type="submit" class="btn btn-primary">Add Treatment</button>
+    </form>
+{% endblock %}
+
