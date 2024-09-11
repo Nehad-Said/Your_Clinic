@@ -1,10 +1,7 @@
 import os
 
-basedir = os.path.abspath(os.path.dirname(__file__))
-
 class Config:
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'your_secret_key_here'
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'database.db')
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'a_hard_to_guess_string'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///database.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    ITEMS_PER_PAGE = 10
 

@@ -16,7 +16,7 @@
     </ul>
 
     <h3>Add Treatment</h3>
-    <form method="POST" action="{{ url_for('patient_profile', patient_id=patient.id) }}">
+    <form method="POST" action="{{ url_for('main.patient_profile', patient_id=patient.id) }}">
         {{ treatment_form.hidden_tag() }}
         <div class="form-group">
             {{ treatment_form.description.label(class="form-label") }}

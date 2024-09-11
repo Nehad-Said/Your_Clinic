@@ -4,7 +4,7 @@
 
 {% block content %}
     <h1>Register Patient</h1>
-    <form method="POST" action="{{ url_for('register_patient') }}">
+    <form method="POST" action="{{ url_for('main.register_patient') }}">
         {{ form.hidden_tag() }}
         <div class="form-group">
             {{ form.name.label(class="form-label") }}
